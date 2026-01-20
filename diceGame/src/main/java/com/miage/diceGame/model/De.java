@@ -11,9 +11,9 @@ public class De {
 
     }
 
-    public Integer getValue() throws Exception{
+    public Integer getValue(){
         if(!lance){
-            throw new Exception("Le dé n'a pas été lancé");
+            return 0;
         }
         return value;
     }

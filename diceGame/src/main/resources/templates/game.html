@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>DiceGame - Play</title>
+    <script type="text/javascript" th:src="@{/js/game.js}"></script>
+</head>
+<body>
+<h1>Partie en cours</h1>
+<table border="1">
+    <tr><th>Dé 1</th><th>Dé 2</th></tr>
+    <tr th:each="des : ${partie.getDes()}">
+        <td th:text="${des[0].getValue()}"></td>
+        <td th:text="${des[1].getValue()}"></td>
+    </tr>
+    <button onclick="lancer_les_des()">Lancer les dès</button>
+    <h1 id="de1">?</h1><h1 id="de2">?</h1>
+</table>
+
+<h1>HighScore</h1>
+<table border="1">
+    <tr><th>Nom</th><th>Score</th><th>Date</th></tr>
+    <tr th:each="entree : ${highscore}">
+        <td th:text="${entree.getName()}"></td>
+        <td th:text="${entree.getScore()}"></td>
+        <td th:text="${entree.getDateFormatee()}"></td>
+    </tr>
+</table>
+</body>
+</html>

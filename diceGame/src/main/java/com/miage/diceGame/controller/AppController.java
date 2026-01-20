@@ -1,6 +1,7 @@
 package com.miage.diceGame.controller;
 
 import com.miage.diceGame.model.Entree;
+import com.miage.diceGame.model.Partie;
 import com.miage.diceGame.service.EntreeService;
 import com.miage.diceGame.service.Highscore;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -26,6 +27,10 @@ public class AppController {
 
     @GetMapping("/game")
     public String game(Model model){
+        Partie partie = new Partie();
+        List<Entree> highscore = this.highscore.getHighscore();
+        model.addAttribute("partie", partie);
+        model.addAttribute("highscore", highscore);
         return "game";
     }
 
