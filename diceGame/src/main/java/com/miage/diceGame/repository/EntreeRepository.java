@@ -10,6 +10,6 @@ import java.util.List;
 @Repository
 public interface EntreeRepository extends JpaRepository<Entree,Integer> {
 
-    @Query(value = "SELECT * FROM entree DESC score LIMIT 10", nativeQuery = true)
+    @Query(value = "SELECT * FROM entree ORDER BY score DESC LIMIT 10", nativeQuery = true)
     public List<Entree> getHighscore();
 }

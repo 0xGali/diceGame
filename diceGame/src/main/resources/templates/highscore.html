@@ -6,7 +6,14 @@
 </head>
 <body>
 <h1>HighScore</h1>
-Bienvenue dans DiceGame, un jeu trés fun et trés simple de lancer de dés pour tester sa chance.
+<table border="1">
+    <tr><th>Nom</th><th>Score</th><th>Date</th></tr>
+    <tr th:each="entree : ${highscore}">
+        <td th:text="${entree.getName()}"></td>
+        <td th:text="${entree.getScore()}"></td>
+        <td th:text="${entree.getDateFormatee()}"></td>
+    </tr>
+</table>
 <br>
 <a href="/"><button>Retour à l'accueil</button></a>
 <br>

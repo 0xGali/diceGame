@@ -8,9 +8,12 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EntreeService {
+public class Highscore{
 
     @Autowired
     private EntreeRepository entreeRepository;
 
+    public List<Entree> getHighscore() {
+        return entreeRepository.getHighscore();
+    }
 }
