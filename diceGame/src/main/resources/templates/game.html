@@ -13,8 +13,15 @@
         <td th:text="${des[0].getValue()}"></td>
         <td th:text="${des[1].getValue()}"></td>
     </tr>
-    <button onclick="lancer_les_des()">Lancer les dès</button>
+    <h2 id="score_total">Score total : 0</h2>
+    <button id="playbutton" onclick="lancer_les_des()">Lancer les dès</button>
     <h1 id="de1">?</h1><h1 id="de2">?</h1>
+    <div id="partieterminee" hidden="true">
+        <h5>Votre partie est terminée, souhaitez vous l'enregistrer ?</h5>
+            <label>Votre nom : <input type="text" id="name"></label>
+            <button id="submitbutton" type="submit" onclick="enregistrer_partie()">Enregistrer</button>
+        </form>
+    </div>
 </table>
 
 <h1>HighScore</h1>

@@ -18,6 +18,8 @@ public class De {
         return value;
     }
 
+    //Si on fait une approche où les dés sont lancés en backend
+    //lance les dés
     public void lancer() throws Exception{
         if(lance){
             throw new Exception("Le dé a déjà été lancé");
